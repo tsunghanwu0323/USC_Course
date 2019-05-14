@@ -1,0 +1,7 @@
+OK 1. JSON file contains no !!TRUCKING COMPANY!!
+
+2. JSON file not exists.
+
+OK 3. If tag is empty, leave !!BLANK!!
+
+OK 4. Data in Header might !!DIFFER!! but struct remain same

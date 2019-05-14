@@ -1,0 +1,147 @@
+.r.<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 4</title>
+	<script type="text/javascript">
+		var jsonDoc;
+		var html = ""; 	// New page for JSON file
+		var obj;		// JSON
+
+		// Function openFile
+		function openFile(form) {
+			var URL = form.URL.value;
+
+			//jsonDoc = loadJSON(URL);
+
+			function loadJSON(url) {
+				var xmlhttp = new XMLHttpRequest(); // creates XMLHttpRequest object
+				// check file exists
+				// this work on my own computer but not on cs-server
+				try {
+					xmlhttp.open("GET", url, false); // initialize request
+					xmlhttp.send();
+				} catch (err) {
+					alert('File not exists!');
+					return false;
+				}
+
+				xmlhttp.open("GET", url, false);
+				xmlhttp.send();
+				
+				// Check file exists
+				// this work on cs-server but not on my computer
+				if (xmlhttp.status === 404) {
+					alert("File doesn't exist.");
+					return false;
+				}
+				jsonDoc = xmlhttp.responseText;
+				return jsonDoc;
+			}
+			
+			// if file exists than make a new page
+			if (loadJSON(URL)) {
+				jsonDoc.onload = makeHTML(jsonDoc);
+			}
+		} // End function
+			
+		// Function makeHTML
+		function makeHTML(jsonDoc) {
+			var form_value = document.myForm.URL.value;
+
+			// Check file name
+			//if (form_value === null || form_value === "") {
+			//	alert("Must enter file name!");
+			//	return false; 
+			//}
+			
+			obj = JSON.parse(jsonDoc);
+			// Check JSON file contains company
+			var key = Object.keys(obj.Mainline.Table);
+			if (key[1] != "Row") {
+				alert("No trucking companies.");
+				return false;
+			}
+
+			html += "<html><head>";
+			// CSS
+			html += "<style type='text/css'>";
+			html += "#header1 { width: 10%; }";
+			html += "#header2 { width: 10%; }";
+			html += "#header3 { width: 23%; }";
+			html += "#header4 { width: 7%; }";
+			html += "#header5 { width: 18%; }";
+			html += "#header6 { width: 32%; }";
+			html += ".logo { height: 150px; }";
+			html += "</style>";
+			// End CSS
+
+			html += "</head><body>";
+
+			// Output table
+			html += "<table border='2', width='1040px'>";
+
+			// Output header
+			var header = obj.Mainline.Table.Header.Data;
+			html += "<tr style='height:85px;'>";
+			for (var i = 0; i < header.length; i++) {
+				html += "<th id='header" + (i + 1) + "'>" + header[i] + "</th>";
+			}
+
+			// Output each company in a row
+			var row = obj.Mainline.Table.Row;
+			for (var i = 0; i < row.length; i++) {
+				html += "<tr id='row" + (i + 1) + "'>";
+				// Output info of a company
+				html += "<td>" + row[i].Company + "</td>";
+				html += "<td>" + row[i].Services + "</td>";
+				html += "<td><ul>";
+				for (var j = 0; j < row[i].Hubs.Hub.length; j++) {
+					if (row[i].Hubs.Hub[j] != "" && row[i].Hubs.Hub[j] != null) {
+						if (j == 0) {
+							html += "<li><b>";
+							html += row[i].Hubs.Hub[j];
+							html += "</b></li>";
+						} else {
+							html += "<li>";
+							html += row[i].Hubs.Hub[j];
+							html += "</li>";
+						}
+					}
+				}
+				html += "</ul></td>";
+				html += "<td>" + row[i].Revenue + "</td>";
+				html += "<td><a href='" + row[i].HomePage + "'>" + row[i].HomePage + "</a></td><td>";
+				if (row[i].Logo != "" && row[i].Logo != null) {
+					html += "<img src='" + row[i].Logo + "' width='100%' height='100%' class='logo'>";
+				}
+				html += "</td></tr>";
+			}
+
+			html += "</table>";
+			html += "<noscript></body></html>";
+
+			// Make new page
+			newWindow = window.open("", "Homework 4", "height=850, width=1055, scrollbar=yes");
+			newWindow.document.write(html);
+			newWindow.document.close();
+			html = "";
+		} // End function
+	</script>
+</head>
+<body>
+	<!-- Submit JSON File -->
+	<div style="text-align: center">
+		<br>
+		<br>
+		<h4><b>Enter URL for Trucking List JSON File</b></h4>
+		<form name="myForm">
+			<input type="text" name="URL" required>
+			<br>
+			<br>
+			<input type="button" name="submit" value="Submit Query" onClick="openFile(this.form)">
+		</form>
+	</div>
+	<noscript>
+</body>
+</html>
