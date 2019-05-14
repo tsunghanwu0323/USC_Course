@@ -1,0 +1,231 @@
+body {
+	margin: 0px auto;
+}
+
+ul {
+	width: auto;
+	padding: 15px;
+	margin: 0px auto;
+	margin-bottom: -5px;
+	text-align: center;
+}
+
+li {
+	display: inline;
+	margin: 0px 60px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	font-family: Helvetica;
+	font-size: 13px;
+}
+
+.read-more:link {
+	font-size: 15px;
+}
+
+.read-more:hover {
+	opacity: 0.5;
+}
+
+.text-color {
+	color: #BC9C5D;
+}
+
+.address p{
+	position: relative;
+	left: 14%;
+	font-family: Helvetica;
+	font-size: 12px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	color: #605E5E;
+}
+
+.storeName p{
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 100px;
+	height: 15px;
+	letter-spacing: 11px;
+	font-size: 55px;
+	font-family: Helvetica;
+}
+
+
+.bgimg-1, .bgimg-2{
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	position: relative;
+
+}
+
+.bgimg-1 {
+	background-image: url("http://cs-server.usc.edu:45678/hw/hw3/images/image6.jpg");
+	height: 650px;
+	width: 1193px;
+	background-size: 2000px;
+	background-position: left -385px top 30px;
+}
+
+.bgimg-2 {
+	background-image: url("http://cs-server.usc.edu:45678/hw/hw3/images/image5.jpg");
+	height: 480px;
+	width: 1193px;
+	background-size: 1200px;
+	background-position: left top 120px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px 0;
+	width: 1000px;
+	margin-left: 112px;
+}
+
+.col {
+	padding: 0 20px;
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.col img {
+	display: block;
+	margin-top: 10px;
+	vertical-align: middle;
+	width: 100%;
+}
+
+#img1 {
+	position: relative;
+	height: 500px;
+	width: 445px;
+	margin-top: 85px;
+	margin-bottom: 45px;
+}
+
+#img2 {
+	position: relative;
+	height: 258px;
+	width: 445px;
+	margin-bottom: 135px;
+}
+
+.title {
+	font-style: oblique;
+	font-size: 34px;
+	margin-top: -50px;
+	margin-bottom: 25px;
+	font-family: serif;
+	letter-spacing: 1px;
+	font-weight: 500;
+}
+
+.content {
+	margin-top: -15px;
+	font-size: 16px; 
+	line-height: 20px;
+	font-family: Helvetica;
+	opacity: 0.7;
+}
+
+#img3 {
+	position: relative;
+	height: 310px;
+	width: 450px;
+	margin-top: 97px;
+	margin-bottom: 45px;
+}
+
+#img4 {
+	position: relative;
+	height: 460px;
+	width: 447px;
+}
+
+#img5 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 930px;
+	height: 603px;
+
+}
+
+#text2 {
+	position: relative;
+	margin-bottom: 60px;
+	font-family: Helvetica;
+}
+
+#text3 {
+	text-align: center;
+	height: 200px;
+}
+
+.web {
+	font-family: Helvetica;
+	font-size: 11px;
+	letter-spacing: 2px;
+	margin-top: 73px;
+	margin-bottom: 16px;
+}
+
+.box {
+	top: 25px;
+	position: relative;
+	text-align: center;
+}
+
+#text-block {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 37px 95px;
+}
+
+.link {
+	font-family: serif;
+	font-size: 35px;
+	opacity: 0.6;
+}
+
+.link:hover {
+	opacity: 0.5;
+}
+
+.end {
+	border: 1px solid #BC9C5D;
+	background-color: #BC9C5D;
+	color: white;
+	height: 213px;
+}
+
+#producer {
+	font-family: Helvetica;
+	font-size: 12px;
+	position: relative;
+	left: 772px;
+	top: 40px;
+}
+
+.blank {
+	content: "";
+	background-color: white;
+	padding: 18px;
+	width: 1157px;
+}
+
+
+
+
+
+
+
+
+
