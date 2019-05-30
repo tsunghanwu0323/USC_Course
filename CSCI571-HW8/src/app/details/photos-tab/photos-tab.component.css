@@ -1,0 +1,9 @@
+.photo-col {
+  display: flex;
+  vertical-align: top;
+  /* margin-bottom: 10px; */
+}
+
+.img-thumbnail {
+  margin-bottom: 10px;
+}
