@@ -3,11 +3,11 @@ const request = require('request');
 const cors = require('cors')
 
 const yelp = require('yelp-fusion');
-const client = yelp.client('Oc39-pu25qwtb4jRpryo3cOCUgTRT0PDKNIZf8Byg3GXv8laI1-mx3tqv83F-J4cLNubEtpoAmAfYEOnr6mkMfdl4EPYAB5Zn_FJRDC7uJS5QNXT8az-mm2YXnXNWnYx');
+const client = yelp.client('YOUR_API_KEY');
 
 const app = express();
 
-const APIKey = 'AIzaSyCWxzlQfNtzY-XKn0X3ueJ46OjaR2K4gqM';
+const APIKey = 'YOUR_GOOGLE_API_KEY';
 
 app.use((req, res, next) => {
   cors();
